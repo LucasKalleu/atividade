@@ -72,29 +72,11 @@
           </thead>
 
           <tbody>
-              <?php
-                $tabela = $conn->prepare("SELECT nome,tipo,quantidade,vencimento,preco FROM produtos");
-                $tabela->execute();
-                while($row = $tabela->fetch(PDO::FETCH_ASSOC)):
-               ?>
-              <?php echo "<tr><td>".$row['nome']."</td>"; ?>
-              <?php echo "<td>".$row['tipo']."</td>"; ?>
-              <?php echo "<td>".$row['quantidade']."</td>"; ?>
-              <?php echo "<td>".$row['vencimento']."</td>"; ?>
-              <?php echo "<td>R$".$row['preco']."</td></tr>"; ?>
-            <?php endwhile; ?>
+              
+            
           </tbody>
           <tfoot>
             <tr>
-              <?php
-              $tab = $conn->query("SELECT SUM(preco) FROM produtos")->fetchColumn();
-               ?>
-               <?php
-                echo "<td colspan='5'>";
-                echo "Total em dinheiro: R$";
-                print $tab;
-                echo "</td>";
-                ?>
             </tr>
           </tfoot>
         </table>

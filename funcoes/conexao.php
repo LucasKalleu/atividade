@@ -1,13 +1,19 @@
 <?php
-try {
-  $username = 'root';
-  $password = 'kalleu123';
-  $conn = new PDO('mysql:host=localhost;dbname=estoque', $username, $password);
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  return $conn;
-} catch(PDOException $e) {
-    echo 'ERROR: ' . $e->getMessage();
-    return $conn;
-}
-return $conn;
+	class Banco{
+			private $host, $user , $password, $dbname ,$conn, $query;
+			function __construct(){
+					$this->host = "localhost";
+					$this->user = "root";
+					$this->password ="";
+					$this->dbname = "mercearia";
+					self::start();
+			}
+			function start(){
+					$this->conn = mysqli_connect("$this->host","$this->user","$this->password", "$this->dbname");
+			}
+			function exeQuery($qry){
+				$this->query = mysqli_query($this->conn, $qry);
+				return $this->query;
+			}
+		}
 ?>

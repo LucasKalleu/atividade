@@ -61,46 +61,22 @@
             <tr>
                 <th>Nome</th>
                 <th>Endereço</th>
-                <th>Celular</th>
+                <th>Contato</th>
                 <th>Inicio da Conta</th>
                 <th>Devendo</th>
                 <th>Modificar</th>
                 <th>Excluir</th>
             </tr>
           </thead>
-
+          <?php include_once '../funcoes/exibirfiado.php'; 
+            $obj->exibir();
+            ?>
           <tbody>
-            <tr>
-              <td>Roberto</td>
-              <td>Av.Cascario</td>
-              <td>(96) 9 9999-9999</td>
-              <td>15/01/2019</td>
-              <td>R$20,55</td>
-              <td><a class="btn-floating btn-medium waves-effect waves-light red modal-trigger" href="#mod"><i class="material-icons">mode_edit</i></a></td>
-              <td><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">close</i></a></td>
             </tr>
-            <tr>
-              <td>Maria</td>
-              <td>Av.Tamarindo</td>
-              <td>(96) 9 9999-9999</td>
-              <td>05/02/2019</td>
-              <td>R$150,55</td>
-              <td><a class="btn-floating btn-medium waves-effect waves-light red modal-trigger" href="#mod"><i class="material-icons">mode_edit</i></a></td>
-              <td><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">close</i></a></td>
-            </tr>
-            <tr>
-              <td>Junior</td>
-              <td>Av.Laslo</td>
-              <td>(96) 9 9999-9999</td>
-              <td>20/04/2019</td>
-              <td>R$520,55</td>
-              <td><a class="btn-floating btn-medium waves-effect waves-light red modal-trigger" href="#mod"><i class="material-icons">mode_edit</i></a></td>
-              <td><a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">close</i></a></td>
-            </tr>
-          </tbody>
+                     </tbody>
           <tfoot>
             <tr>
-              <td colspan="5">Total em dinheiro: R$691,65</td>
+              <td colspan="5">Total em dinheiro: R$<?php $obj->soma();?></td>
             </tr>
           </tfoot>
         </table>
@@ -164,44 +140,43 @@
           <h4>Dados do Cliente</h4>
           <br><br>
           <div class="row">
-            <form>
+            <form action="../funcoes/inserindo.php" method="post">
               <div class="row">
                 <div class="input-field col s12 m6 l6">
-                  <input placeholder="Insira um nome" id="first_name" type="text" class="validate">
+                  <input placeholder="Insira um nome" name="nome" id="first_name" type="text" class="validate" required>
                   <label for="first_name">Nome</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                  <input placeholder="Insira o endereço" id="first_name" type="text" class="validate">
+                  <input placeholder="Insira o endereço" id="first_name" name="endereco" type="text" class="validate" required>
                   <label for="first_name">Endereço</label>
                 </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s12 m6 l6">
-                  <input placeholder="Insira um número" id="first_name" type="text" class="validate">
+                  <input placeholder="Insira um número" name="contato" id="first_name" type="text" class="validate" required>
                   <label for="first_name">Celular</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                  <input style="color: #cfd8dc" placeholder="" id="first_name" type="date">
+                  <input style="color: #cfd8dc" placeholder="" name="cadastro" id="first_name" type="date" required value="<?php echo date('Y-m-d'); ?>">
                 </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s12 m6 l6">
-                  <input placeholder="Insira a quantia" id="first_name" type="number" class="validate">
+                  <input placeholder="Insira a quantia" id="first_name" name="divida" type="number" class="validate" required>
                   <label for="first_name">Dinheiro</label>
                 </div>
               </div>
-            </form>
           </div>
         </div>
-        <div class="modal-footer">
+       <div class="modal-footer">
           <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cadastrar</a>
+          <input class="waves-green btn-flat " type="submit" name="verificar" value="Cadastrar">
         </div>
       </div>
     </footer>
-
+  </form>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
