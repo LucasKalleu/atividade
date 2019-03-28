@@ -28,7 +28,7 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="consultas.php">Consultas</a></li>
           <li><a href="historico.php">Histórico</a></li>
-          <li><a href="giftcards.php">Giftcards</a></li>
+          <li><a href="fornecedores.php">Fornecedores</a></li>
           <li><a href="fiado.php">Fiado</a></li>
           <li><a href="usuario.php">Usuário</a></li>
         </ul>
@@ -36,7 +36,7 @@
           <li id="sideLogo"></li>
           <li><a href="consultas.php">Consultas</a></li>
           <li><a href="historico.php">Histórico</a></li>
-          <li><a href="giftcards.php">Giftcards</a></li>
+          <li><a href="fornecedores.php">Fornecedores</a></li>
           <li><a href="fiado.php">Fiado</a></li>
           <li><a href="usuario.php">Usuário</a></li>
         </ul>
@@ -72,8 +72,8 @@
           </thead>
 
           <tbody>
-              
-            
+
+
           </tbody>
           <tfoot>
             <tr>
