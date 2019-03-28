@@ -97,40 +97,19 @@
       <!-- Modal Estrutura Adiconar Produtos/Fiado -->
       <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
-          <nav class="col s12 m10 l10 offset-l1 offset-m1 blue-grey lighten-3">
-            <div class="nav-wrapper">
-              <form>
-                <div class="input-field" style="padding: 7px">
-                  <input id="search" type="search" required>
-                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                  <i class="material-icons">close</i>
-                </div>
-              </form>
+
+          <!-- É só dar echo nessa <div> do input pra poder exibir outro input -->
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="Insira o produto" id="first_name" type="text" class="validate">
+              <label for="first_name">Produto</label>
             </div>
-          </nav>
-
-          <!-- BOTA PRA EXIBIR A LISTA DE PRODUTOS AQUI -->
-          <!-- Como vai funcionar ?! Basicamente, a pessoa vai usar a barra de pesquisa pra encontrar o produto,
-          utilizar a checkbox pra marcar o produto que ela quer e assim adicionar na lista da pessoa do fiado. No final, basta
-          apertar no botão adicionar que vai pra tabela da pessoa do fiado. -->
-          <!-- TEM QUE USAR O PHP PRA DAR 'ECHO' NESSA ESTRUTURA QUE VAI EXIBIR OS PRODUTOS -->
-          <ul class="collection with-header col s12">
-            <form action="">
-              <ul class="collection">
-                <!-- echo nessas TAG's <li> para poder ficar ordenado -->
-                <li class="collection-item">
-                  <div>Alvin
-                    <p class="secondary-content">
-                      <input type="checkbox" id="filled-in-box" class="filled-in" checked="checked">
-                      <label for="filled-in-box"></label>
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </form>
-
-          </ul>
-
+          </div>
+          <div class="row">
+            <a class="btn waves-effect waves-light modal-trigger col s12" type="button" name="action" href="#modal1">Adicionar mais produtos
+              <i class="material-icons right">add</i>
+            </a>
+          </div>
         </div>
         <div class="modal-footer">
           <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
